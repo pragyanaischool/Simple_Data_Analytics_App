@@ -55,7 +55,7 @@ url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic
 df_titanic = pd.read_csv(url)
 st.dataframe(df_titanic)
 
-fig, ax = plt.subplots()
+fig1, ax1 = plt.subplots()
 survived = df_titanic['Survived'].value_counts()[1]
 not_survived = df_titanic['Survived'].value_counts()[0]
 survived_per = survived / df_titanic.shape[0] * 100
@@ -70,5 +70,5 @@ plt.tick_params(axis='x', labelsize=13)
 plt.tick_params(axis='y', labelsize=13)
 
 plt.title('Training Set Survival Distribution', size=15, y=1.05)
-sns.countplot(df_titanic['Survived'], ax =ax)
-st.pyplot(fig)
+sns.countplot(df_titanic['Survived'], ax =ax1)
+st.pyplot(fig1)
