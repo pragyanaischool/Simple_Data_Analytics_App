@@ -55,6 +55,7 @@ url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic
 df_titanic = pd.read_csv(url)
 st.dataframe(df_titanic)
 
+st.subheader('Count Plot: For Class / Target')
 fig1, ax1 = plt.subplots()
 survived = df_titanic['Survived'].value_counts()[1]
 not_survived = df_titanic['Survived'].value_counts()[0]
