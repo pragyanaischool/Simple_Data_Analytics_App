@@ -83,3 +83,12 @@ df_train.drop_duplicates(inplace =True)
 #st.write(df)
 plot = sns.heatmap(df_train.corr(numeric_only=True),  annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
 st.pyplot(plot.get_figure())
+
+
+fig2, axs = plt.subplots( figsize=(20, 20))
+
+sns.heatmap(df_train.corr(numeric_only=True), ax=axs, annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
+    
+axs.set_title('Titanic DataSet Correlations', size=15)
+
+st.pyplot(fig2)
