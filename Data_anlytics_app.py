@@ -56,18 +56,18 @@ df_titanic = pd.read_csv(url)
 st.dataframe(df_titanic)
 
 fig1, ax1 = plt.subplots()
-#survived = df_titanic['Survived'].value_counts()[1]
-#not_survived = df_titanic['Survived'].value_counts()[0]
-#survived_per = survived / df_titanic.shape[0] * 100
-#not_survived_per = not_survived / df_titanic.shape[0] * 100
+survived = df_titanic['Survived'].value_counts()[1]
+not_survived = df_titanic['Survived'].value_counts()[0]
+survived_per = survived / df_titanic.shape[0] * 100
+not_survived_per = not_survived / df_titanic.shape[0] * 100
 
 plt.figure(figsize=(10, 8))
 
 plt.xlabel('Survival', size=15, labelpad=15)
 plt.ylabel('Passenger Count', size=15, labelpad=15)
-#plt.xticks((0, 1), ['Not Survived ({0:.2f}%)'.format(not_survived_per), 'Survived ({0:.2f}%)'.format(survived_per)])
-#plt.tick_params(axis='x', labelsize=13)
-#plt.tick_params(axis='y', labelsize=13)
+plt.xticks((0, 1), ['Not Survived ({0:.2f}%)'.format(not_survived_per), 'Survived ({0:.2f}%)'.format(survived_per)])
+plt.tick_params(axis='x', labelsize=13)
+plt.tick_params(axis='y', labelsize=13)
 
 plt.title('Training Set Survival Distribution', size=15, y=1.05)
 sns.countplot(data = df_titanic, x = "Survived", ax = ax1)
