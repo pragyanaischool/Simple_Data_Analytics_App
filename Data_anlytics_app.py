@@ -62,7 +62,6 @@ survived_per = survived / df_titanic.shape[0] * 100
 not_survived_per = not_survived / df_titanic.shape[0] * 100
 
 plt.figure(figsize=(10, 8))
-sns.countplot(df_titanic['Survived'], ax =ax)
 
 plt.xlabel('Survival', size=15, labelpad=15)
 plt.ylabel('Passenger Count', size=15, labelpad=15)
@@ -71,5 +70,5 @@ plt.tick_params(axis='x', labelsize=13)
 plt.tick_params(axis='y', labelsize=13)
 
 plt.title('Training Set Survival Distribution', size=15, y=1.05)
-
+sns.countplot(df_titanic['Survived'], ax =ax)
 st.pyplot(fig)
