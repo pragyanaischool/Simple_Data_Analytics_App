@@ -28,6 +28,7 @@ st.write("Line Chart")
 # Display line chart
 st.line_chart(df.set_index('Date'))
 
+df = pd.read_csv(url, parse_dates=['Date'])
 st.write("Histogram Plot")
 fig = ff.create_distplot(df['Temp'], "Temp")
 st.plotly_chart(fig, use_container_width=True)
