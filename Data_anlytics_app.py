@@ -42,3 +42,9 @@ ax.set_ylabel('Frequency')
 # Display the plot
 st.pyplot(fig)
 
+# Plotting a histogram
+st.subheader('Histogram: with Seaborn')
+fig, ax = plt.subplots()
+plt.figure(figsize=(10,6))
+sns.histplot(data=df, x=feature, kde=True, ax =ax)
+st.pyplot(fig)
