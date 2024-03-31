@@ -70,5 +70,5 @@ plt.ylabel('Passenger Count', size=15, labelpad=15)
 #plt.tick_params(axis='y', labelsize=13)
 
 plt.title('Training Set Survival Distribution', size=15, y=1.05)
-sns.countplot(df_titanic['Survived'], ax =ax1)
+sns.countplot(df_titanic['Survived'])
 st.pyplot(fig1)
