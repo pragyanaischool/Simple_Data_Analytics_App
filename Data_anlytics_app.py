@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 import plotly.figure_factory as ff
+from sklearn.preprocessing import LabelEncoder
 
 st.title('My Data Analytics App')  # Sets the title of your page
 
