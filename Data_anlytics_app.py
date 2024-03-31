@@ -16,6 +16,6 @@ df = pd.read_csv(url, parse_dates=['Date'])
 # Display DataFrame in Streamlit
 st.dataframe(df)
 
-st.write(df.info())
+st.text(df.info())
 
-st.write(df.decribe())
+st.write(df.describe())
