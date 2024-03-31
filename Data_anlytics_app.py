@@ -87,12 +87,6 @@ st.pyplot(plot.get_figure())
 
 st.subheader('PairPlot: ')
 
-# Create a Seaborn pairplot
-plot = sns.pairplot(df)
- 
-# Display the plot in Streamlit
-st.pyplot(plot.fig)
-
 # Encoding Categorical values
 
 df_train.drop(['Name'], axis=1, inplace = True)
@@ -108,7 +102,9 @@ plot1 = sns.pairplot(df_train)
 # Display the plot in Streamlit
 st.pyplot(plot1.fig)
 
-#fig2, axs = plt.subplots( figsize=(20, 20))
+
+st.dataframe(df_train)
+#fig2, axs = plt.subplots( figsize=(50, 50))
 
 #sns.heatmap(df_train.corr(numeric_only=True), ax=axs, annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
     
