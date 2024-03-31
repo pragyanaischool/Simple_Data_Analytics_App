@@ -76,10 +76,8 @@ st.pyplot(fig1)
 
 
 st.subheader('HeatMAP: ')
-
 df_train = df_titanic.drop(['PassengerId'], axis=1)
-df = pd.DataFrame(df_train.corr())
-st.write(df)
-
+#df = pd.DataFrame(df_train.corr())
+#st.write(df)
 plot = sns.heatmap(data = df, ax=axs, annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
 st.pyplot(plot.get_figure())
