@@ -30,5 +30,7 @@ st.line_chart(df.set_index('Date'))
 
 df = pd.read_csv(url, parse_dates=['Date'])
 st.write("Histogram Plot")
-fig = ff.create_distplot(df['Temp'], "Temp")
-st.plotly_chart(fig, use_container_width=True)
+# Plot histogram
+feature = "Temp"
+fig, ax = plt.subplots()
+ax.hist(df[feature], bins=20)
