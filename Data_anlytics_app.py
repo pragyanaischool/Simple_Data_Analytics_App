@@ -4,6 +4,7 @@ from sklearn import datasets
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import plotly.figure_factory as ff
 
 st.title('My Data Analytics App')  # Sets the title of your page
 
@@ -23,5 +24,10 @@ st.write("Basic Analytics")
 
 st.write(df.describe())
 
+st.write("Line Chart")
 # Display line chart
 st.line_chart(df.set_index('Date'))
+
+st.write("Histogram Plot")
+fig = ff.create_distplot(df['Temp'], "Temp")
+st.plotly_chart(fig, use_container_width=True)
