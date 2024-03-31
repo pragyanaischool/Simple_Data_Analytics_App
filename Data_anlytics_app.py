@@ -18,7 +18,10 @@ st.dataframe(df)
 
 st.write("Basic Analytics")
 
-txt = df.info()
-st.text(txt)
+#txt = df.info()
+#st.text(txt)
 
 st.write(df.describe())
+
+# Display line chart
+st.line_chart(df.set_index('Date'))
