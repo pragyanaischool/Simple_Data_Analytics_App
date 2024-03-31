@@ -1,0 +1,14 @@
+streamlit
+streamlit_book
+requests
+numpy
+matplotlib
+seaborn
+pathlib
+moviepy
+imageio
+tensorflow
+plotly
+scikit-learn
+Pillow
+streamlit-image-select
