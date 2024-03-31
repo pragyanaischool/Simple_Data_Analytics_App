@@ -84,6 +84,29 @@ df_train.drop_duplicates(inplace =True)
 plot = sns.heatmap(df_train.corr(numeric_only=True),  annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
 st.pyplot(plot.get_figure())
 
+st.subheader('PairPlot: ')
+
+# Create a Seaborn pairplot
+plot = sns.pairplot(df)
+ 
+# Display the plot in Streamlit
+st.pyplot(plot.fig)
+
+# Encoding Categorical values
+
+df_train.drop(['Name'], axis=1, inplace = True)
+
+non_numeric_features = ['Embarked', 'Sex', 'Cabin',  'Ticket']
+
+for feature in non_numeric_features:        
+        df_train[feature] = LabelEncoder().fit_transform(df_train[feature])
+
+# Create a Seaborn pairplot
+plot = sns.pairplot(df_train)
+ 
+# Display the plot in Streamlit
+st.pyplot(plot.fig)
+
 #fig2, axs = plt.subplots( figsize=(20, 20))
 
 #sns.heatmap(df_train.corr(numeric_only=True), ax=axs, annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
