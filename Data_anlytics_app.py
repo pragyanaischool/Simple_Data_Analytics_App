@@ -103,10 +103,10 @@ for feature in non_numeric_features:
         df_train[feature] = LabelEncoder().fit_transform(df_train[feature])
 
 # Create a Seaborn pairplot
-plot = sns.pairplot(df_train)
+plot1 = sns.pairplot(df_train)
  
 # Display the plot in Streamlit
-st.pyplot(plot.fig)
+st.pyplot(plot1.fig)
 
 #fig2, axs = plt.subplots( figsize=(20, 20))
 
