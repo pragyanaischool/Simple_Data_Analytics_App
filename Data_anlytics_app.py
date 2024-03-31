@@ -18,6 +18,7 @@ st.dataframe(df)
 
 st.write("Basic Analytics")
 
-st.text(df.info())
+txt = df.info()
+st.text(txt)
 
 st.write(df.describe())
