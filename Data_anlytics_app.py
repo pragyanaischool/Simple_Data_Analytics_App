@@ -54,3 +54,22 @@ st.header('Data Visualization of Titanic Data')  # Sets a header for a section
 url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
 df_titanic = pd.read_csv(url)
 st.dataframe(df_titanic)
+
+fig, ax = plt.subplots()
+survived = df_titanic['Survived'].value_counts()[1]
+not_survived = df_titanic['Survived'].value_counts()[0]
+survived_per = survived / df_titanic.shape[0] * 100
+not_survived_per = not_survived / df_titanic.shape[0] * 100
+
+plt.figure(figsize=(10, 8))
+sns.countplot(df_titanic['Survived'], ax =ax)
+
+plt.xlabel('Survival', size=15, labelpad=15)
+plt.ylabel('Passenger Count', size=15, labelpad=15)
+plt.xticks((0, 1), ['Not Survived ({0:.2f}%)'.format(not_survived_per), 'Survived ({0:.2f}%)'.format(survived_per)])
+plt.tick_params(axis='x', labelsize=13)
+plt.tick_params(axis='y', labelsize=13)
+
+plt.title('Training Set Survival Distribution', size=15, y=1.05)
+
+st.pyplot(fig)
