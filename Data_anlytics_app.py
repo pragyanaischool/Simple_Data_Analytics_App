@@ -51,6 +51,6 @@ st.pyplot(fig)
 
 st.header('Data Visualization of Titanic Data')  # Sets a header for a section
 # Load the Titanic dataset
-url = https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
+url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
 df_titanic = pd.read_csv(url)
 st.dataframe(df)
