@@ -76,8 +76,9 @@ st.pyplot(fig1)
 
 
 st.subheader('HeatMAP: ')
-st.write(df_train.corr())
+
 df_train = df_titanic.drop(['PassengerId'], axis=1)
+st.write(df_train.corr())
 fig2, axs = plt.subplots(figsize=(20, 20))
 sns.heatmap(data = df_train.corr(), ax=axs, annot=True, square=True, cmap='coolwarm', annot_kws={'size': 14})
 #axs.tick_params(axis='y', labelsize=14)
